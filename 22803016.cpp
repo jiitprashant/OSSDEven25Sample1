@@ -1,0 +1,20 @@
+// 22803016 Himangi Mishra B12
+
+#include <bits/stdc++.h>
+using namespace std;
+
+string binaryToText(const string& binary) {
+    string text = "";
+    for (size_t i = 0; i < binary.length(); i += 8) {
+        string byte = binary.substr(i, 8);
+        char ch = static_cast<char>(bitset<8>(byte).to_ulong());
+        text += ch;
+    }
+    return text;
+}
+
+int main() {
+    cout << binaryToText("010100110110100101110010001000000111000001101100011001010110000101110011011001010010000001100111011010010111011001100101001000000110011101101111011011110110010000100000011011010110000101110010011010110111001100100000001010000011000100110101001010110010100100100000011010010110111000100000011001010111100001100001011011010111001100101110") << endl;
+
+    return 0;
+}
